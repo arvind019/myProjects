@@ -67,15 +67,15 @@ public class StudentServiceImpl implements IStudentService {
     }
 
     private StudentResponseDto getStudentResponseDto(final StudentEntity entity) {
-        final StudentResponseDto response = new StudentResponseDto();
-        response.setId(entity.getId());
-        response.setBranch(entity.getBranch());
-        response.setName(entity.getName());
-        response.setCourse(entity.getCourse());
-        response.setMobile(entity.getMobile());
-        response.setYear(entity.getYear());
-        response.setGraduationYear(entity.getGraduationYear());
-        return response;
+        return StudentResponseDto.builder()
+                                 .id(entity.getId())
+                                 .branch(entity.getBranch())
+                                 .name(entity.getName())
+                                 .course(entity.getCourse())
+                                 .mobile(entity.getMobile())
+                                 .year(entity.getYear())
+                                 .graduationYear(entity.getGraduationYear())
+                                 .build();
     }
 
     @Override
