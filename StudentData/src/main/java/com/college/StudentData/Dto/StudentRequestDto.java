@@ -13,5 +13,5 @@ public class StudentRequestDto {
     private Integer year;
     private String branch;
     private String mobile;
-    private Integer graduationyear;
+    private Integer graduationYear;
 }

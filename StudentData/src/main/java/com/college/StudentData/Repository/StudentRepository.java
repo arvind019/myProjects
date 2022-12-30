@@ -11,7 +11,7 @@ public interface StudentRepository extends JpaRepository<StudentEntity, Integer>
 
     List<StudentEntity> findByCourse(final String course);
 
-    List<StudentEntity> findByYear(final int year);
+    List<StudentEntity> findByYear(final Integer year);
 
     List<StudentEntity> findByMobile(final String mobile);
 }

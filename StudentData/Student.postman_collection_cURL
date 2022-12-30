@@ -1,0 +1,185 @@
+{
+	"info": {
+		"_postman_id": "db273ee6-a6b0-4663-8ae1-40274089ed39",
+		"name": "Student",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25119464"
+	},
+	"item": [
+		{
+			"name": "Save Student Info",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"name\": \"Arvind\",\r\n        \"course\": \"B.Tech\",\r\n        \"year\": 2017,\r\n        \"branch\": \"CSE\",\r\n        \"mobile\": \"7772019571\",\r\n        \"graduationYear\": 2021\r\n    },\r\n    {\r\n        \"name\": \"Amey\",\r\n        \"course\": \"B.Tech\",\r\n        \"year\": 2017,\r\n        \"branch\": \"CSE\",\r\n        \"mobile\": \"1234567890\",\r\n        \"graduationYear\": 2021\r\n    },\r\n    {\r\n        \"name\": \"Akash\",\r\n        \"course\": \"B.Tech\",\r\n        \"year\": 2017,\r\n        \"branch\": \"CSE\",\r\n        \"mobile\": \"1234567800\",\r\n        \"graduationYear\": 2021\r\n    },\r\n    {\r\n        \"name\": \"Anupam\",\r\n        \"course\": \"B.Tech\",\r\n        \"year\": 2017,\r\n        \"branch\": \"CSE\",\r\n        \"mobile\": \"1234567000\",\r\n        \"graduationYear\": 2021\r\n    },\r\n    {\r\n        \"name\": \"Anurag\",\r\n        \"course\": \"B.Tech\",\r\n        \"year\": 2017,\r\n        \"branch\": \"CSE\",\r\n        \"mobile\": \"1234560000\",\r\n        \"graduationYear\": 2021\r\n    },\r\n    {\r\n        \"name\": \"Hitesh\",\r\n        \"course\": \"B.Tech\",\r\n        \"year\": 2017,\r\n        \"branch\": \"CSE\",\r\n        \"mobile\": \"1234500000\",\r\n        \"graduationYear\": 2021\r\n    },\r\n    {\r\n        \"name\": \"Anant\",\r\n        \"course\": \"B.Tech\",\r\n        \"year\": 2017,\r\n        \"branch\": \"Civil\",\r\n        \"mobile\": \"1234000000\",\r\n        \"graduationYear\": 2021\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/student/api/v1/save/info",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"student",
+						"api",
+						"v1",
+						"save",
+						"info"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Student Info",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/student/api/v1/getInfoBy?options=ALL",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"student",
+						"api",
+						"v1",
+						"getInfoBy"
+					],
+					"query": [
+						{
+							"key": "course",
+							"value": "B.Tech",
+							"description": "Not Mandatory",
+							"disabled": true
+						},
+						{
+							"key": "name",
+							"value": "Ankur",
+							"description": "Not Mandatory",
+							"disabled": true
+						},
+						{
+							"key": "mobile",
+							"value": "7772019571",
+							"description": "Not Mandatory",
+							"disabled": true
+						},
+						{
+							"key": "year",
+							"value": "2017",
+							"description": "Not Mandatory",
+							"disabled": true
+						},
+						{
+							"key": "options",
+							"value": "ALL",
+							"description": "Not Mandatory"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update All Student Info",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Amey Joshi\",\r\n    \"year\": 2017,\r\n    \"mobile\": \"9131414991\",\r\n    \"graduationYear\": 2021\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/student/api/v1/update/info/10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"student",
+						"api",
+						"v1",
+						"update",
+						"info",
+						"10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Student Info",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/student/api/v1/delete/info/18",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"student",
+						"api",
+						"v1",
+						"delete",
+						"info",
+						"18"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Partial Student Info",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"course\": \"B.Tech\",\r\n    \"year\": 2017,\r\n    \"branch\": \"CSE\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/student/api/v1/update/info/10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"student",
+						"api",
+						"v1",
+						"update",
+						"info",
+						"10"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
