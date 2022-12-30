@@ -31,7 +31,7 @@ public class StudentServiceImpl implements IStudentService {
         entity.setCourse(request.getCourse());
         entity.setMobile(request.getMobile());
         entity.setYear(request.getYear());
-        entity.setGraduationYear(request.getGraduationyear());
+        entity.setGraduationYear(request.getGraduationYear());
         return entity;
     }
 
@@ -90,7 +90,7 @@ public class StudentServiceImpl implements IStudentService {
         student.setCourse(request.getCourse() != null ? request.getCourse() : student.getCourse());
         student.setMobile(request.getMobile() != null ? request.getMobile() : student.getMobile());
         student.setYear(request.getYear() != null ? request.getYear() : student.getYear());
-        student.setGraduationYear(request.getGraduationyear() != null ? request.getGraduationyear() : student.getGraduationYear());
+        student.setGraduationYear(request.getGraduationYear() != null ? request.getGraduationYear() : student.getGraduationYear());
         studentRepository.save(student);
     }
 
@@ -106,7 +106,7 @@ public class StudentServiceImpl implements IStudentService {
         student.setCourse(request.getCourse());
         student.setMobile(request.getMobile());
         student.setYear(request.getYear());
-        student.setGraduationYear(request.getGraduationyear());
+        student.setGraduationYear(request.getGraduationYear());
         studentRepository.save(student);
     }
 

@@ -1,16 +1,18 @@
 package com.college.StudentData.Dto;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
+import lombok.Builder;
 import lombok.Data;
 
 @Data
+@Builder
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class StudentResponseDto {
-    private int id;
+    private Integer id;
     private String name;
     private String course;
-    private int year;
+    private Integer year;
     private String branch;
     private String mobile;
-    private int graduationYear;
+    private Integer graduationYear;
 }

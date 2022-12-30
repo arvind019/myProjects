@@ -49,31 +49,52 @@ public class StudentController {
     public ResponseEntity<BaseAPIResponseBean<?>> updateAllStudentInfo(@PathVariable final Integer id,
                                                                        @RequestBody final StudentRequestDto request) throws Exception {
 
-        studentService.updateAllStudentInfo(id, request);
-        BaseAPIResponseBean<?> response = new BaseAPIResponseBean<>();
-        response.setMessage(Constants.SUCCESS_MESSAGE);
-        response.setStatus(Constants.SUCCESS_STATUS);
-        return ResponseEntity.ok(response);
+        try {
+            studentService.updateAllStudentInfo(id, request);
+            BaseAPIResponseBean<?> response = new BaseAPIResponseBean<>();
+            response.setMessage(Constants.SUCCESS_MESSAGE);
+            response.setStatus(Constants.SUCCESS_STATUS);
+            return ResponseEntity.ok(response);
+        } catch (Exception exception) {
+            BaseAPIResponseBean<?> response = new BaseAPIResponseBean<>();
+            response.setMessage(exception.getMessage());
+            response.setStatus(Constants.FAILED_STATUS);
+            return ResponseEntity.ok(response);
+        }
     }
 
     @DeleteMapping("/delete/info/{id}")
     public ResponseEntity<BaseAPIResponseBean<?>> deleteStudentInfo(@PathVariable final Integer id) throws Exception {
 
-        studentService.deleteStudentInfo(id);
-        BaseAPIResponseBean<?> response = new BaseAPIResponseBean<>();
-        response.setMessage(Constants.SUCCESS_MESSAGE);
-        response.setStatus(Constants.SUCCESS_STATUS);
-        return ResponseEntity.ok(response);
+        try {
+            studentService.deleteStudentInfo(id);
+            BaseAPIResponseBean<?> response = new BaseAPIResponseBean<>();
+            response.setMessage(Constants.SUCCESS_MESSAGE);
+            response.setStatus(Constants.SUCCESS_STATUS);
+            return ResponseEntity.ok(response);
+        }catch (Exception exception) {
+            BaseAPIResponseBean<?> response = new BaseAPIResponseBean<>();
+            response.setMessage(exception.getMessage());
+            response.setStatus(Constants.FAILED_STATUS);
+            return ResponseEntity.ok(response);
+        }
     }
 
     @PatchMapping("/update/info/{id}")
     public ResponseEntity<BaseAPIResponseBean<?>> updateStudentInfo(@PathVariable final Integer id,
                                                                     @RequestBody final StudentRequestDto request) throws Exception {
 
-        studentService.updateStudentInfo(id, request);
-        BaseAPIResponseBean<?> response = new BaseAPIResponseBean<>();
-        response.setMessage(Constants.SUCCESS_MESSAGE);
-        response.setStatus(Constants.SUCCESS_STATUS);
-        return ResponseEntity.ok(response);
+        try {
+            studentService.updateStudentInfo(id, request);
+            BaseAPIResponseBean<?> response = new BaseAPIResponseBean<>();
+            response.setMessage(Constants.SUCCESS_MESSAGE);
+            response.setStatus(Constants.SUCCESS_STATUS);
+            return ResponseEntity.ok(response);
+        } catch (Exception exception) {
+            BaseAPIResponseBean<?> response = new BaseAPIResponseBean<>();
+            response.setMessage(exception.getMessage());
+            response.setStatus(Constants.FAILED_STATUS);
+            return ResponseEntity.ok(response);
+        }
     }
 }
