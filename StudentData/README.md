@@ -6,3 +6,6 @@ CRUD Operations include -
 3. Update Student Info (Update Complete Information(Overwrite) of existing Student by Id)
 4. Delete Student Info (Delete Information of Students by Id)
 5. Patch Student Info (Update Partial Information of Students by Id)
+
+Added Postman Collection
+File Name - Student.postman_collection_cURL
