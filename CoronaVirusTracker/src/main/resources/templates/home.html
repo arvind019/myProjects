@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <style>
+    body
+    {
+    counter-reset: Serial;
+    }
+    table
+    {
+    border-collapse: separate;
+    }
+    tr td:first-child:before
+    {
+    counter-increment: Serial;
+    content: counter(Serial);
+    }
+
+    </style>
+
+</head>
+<body>
+<h1>Corona Virus Tracker</h1>
+<p>This page reports daily number of cases.</p>
+
+<div class="jumbotron">
+    <h1 class="display-4" th:text="${totalCases}"></h1>
+    <p class="lead">Total Cases Reported as of today.</p>
+    <hr class="my-4">
+    <p>
+        <span>New Cases Reported since Yesterday.</span>
+        <span th:text="${totalDailyCount}"></span>
+    </p>
+
+</div>
+
+<div class="container">
+    <table class="table">
+        <tr>
+            <th>S.No.</th>
+            <th>Country</th>
+            <th>Total Cases Reported</th>
+            <th>Cases Reported Today</th>
+        </tr>
+
+        <tr th:each="dailyCases : ${dailyCases}">
+            <td></td>
+            <td th:text="${dailyCases.countryName}"></td>
+            <td th:text="${dailyCases.totalCount}">0</td>
+            <td th:text="${dailyCases.dailyCount}">0</td>
+        </tr>
+
+    </table>
+</div>
+
+</body>
+</html>
