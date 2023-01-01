@@ -1,11 +1,9 @@
 # myProjects
-# This project is a simple CRUD application in JAVA and Spring Boot using MySQL Database.
-CRUD Operations include -
-1. Save Student Info (Can Save multiple students information through one API call)
-2. Get Student Info (Get Information of All Students or by Name, Course, Year and Mobile number)
-3. Update Student Info (Update Complete Information(Overwrite) of existing Student by Id)
-4. Delete Student Info (Delete Information of Students by Id)
-5. Patch Student Info (Update Partial Information of Students by Id)
+# This project displays Corona Cases Data till Date in a web page. This application is build in JAVA and Spring Boot using thymeleaf, html and css.
+Projects internal working includes -
+1. Calling a corona cases repository for getting the corona cases data(API call to repo).
+2. Parsing and processing of the CSV data received in favorable object data.
+3. Thymeleaf is used to set data in a html file.
 
-Added Postman Collection
-File Name - Student.postman_collection_cURL
+Added Postman Collection(Please hit URL in web Browser)
+File Name - CoronaVirusTracker.postman_collection.json
