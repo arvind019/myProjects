@@ -1,10 +1,9 @@
 package com.microservices.moviecatalogservice.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
-import lombok.Builder;
 import lombok.Data;
 
-import java.util.Date;
+import java.sql.Date;
 import java.util.List;
 
 @Data

@@ -11,6 +11,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 
+// Can Use Only Name if using Eureka Server
+// Else use Name and URL both
+//@FeignClient(name = Constants.RATING_SERVICE_NAME)
 @FeignClient(name = Constants.RATING_SERVICE_NAME, url = "${RATING_SERVICE_BASE_URL}")
 public interface RatingInfoClient {
 

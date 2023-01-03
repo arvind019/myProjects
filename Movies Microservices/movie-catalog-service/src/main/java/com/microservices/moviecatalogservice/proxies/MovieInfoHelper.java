@@ -38,6 +38,7 @@ public class MovieInfoHelper {
         if (response != null && Constants.SUCCESS_STATUS.equalsIgnoreCase(response.getStatus())) {
             return response.getData();
         } else {
+            System.out.println("Response = " + response);
             throw new Exception(response != null ? response.getMessage() : "Response from Movie Info Service is null");
         }
     }

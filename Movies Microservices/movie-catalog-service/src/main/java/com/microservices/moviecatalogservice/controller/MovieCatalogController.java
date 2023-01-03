@@ -34,11 +34,36 @@ public class MovieCatalogController {
     @GetMapping("/info/{userId}")
     public ResponseEntity<BaseAPIResponseBean<MovieCatalogResponseDto>> getUserInfo(@PathVariable(value = "userId") final Integer userId) throws Exception {
 
-        final MovieCatalogResponseDto data = movieCatalogService.getUserMovieCatalogInfo(userId);
-        final BaseAPIResponseBean<MovieCatalogResponseDto> response = new BaseAPIResponseBean<>();
-        response.setMessage(Constants.SUCCESS_MESSAGE);
-        response.setStatus(Constants.SUCCESS_STATUS);
-        response.setData(data);
-        return ResponseEntity.ok(response);
+        try {
+            final MovieCatalogResponseDto data = movieCatalogService.getUserMovieCatalogInfo(userId);
+            final BaseAPIResponseBean<MovieCatalogResponseDto> response = new BaseAPIResponseBean<>();
+            response.setMessage(Constants.SUCCESS_MESSAGE);
+            response.setStatus(Constants.SUCCESS_STATUS);
+            response.setData(data);
+            return ResponseEntity.ok(response);
+        } catch (Exception ex) {
+            final BaseAPIResponseBean<MovieCatalogResponseDto> response = new BaseAPIResponseBean<>();
+            response.setMessage(ex.getMessage());
+            response.setStatus(Constants.FAILURE_STATUS);
+            return ResponseEntity.ok(response);
+        }
+    }
+
+    @GetMapping("/all")
+    public ResponseEntity<BaseAPIResponseBean<List<MovieCatalogResponseDto>>> getAllUsers() throws Exception {
+
+        try {
+            final List<MovieCatalogResponseDto> data = movieCatalogService.getAllUsers();
+            final BaseAPIResponseBean<List<MovieCatalogResponseDto>> response = new BaseAPIResponseBean<>();
+            response.setMessage(Constants.SUCCESS_MESSAGE);
+            response.setStatus(Constants.SUCCESS_STATUS);
+            response.setData(data);
+            return ResponseEntity.ok(response);
+        } catch (Exception ex) {
+            final BaseAPIResponseBean<List<MovieCatalogResponseDto>> response = new BaseAPIResponseBean<>();
+            response.setMessage(ex.getMessage());
+            response.setStatus(Constants.FAILURE_STATUS);
+            return ResponseEntity.ok(response);
+        }
     }
 }

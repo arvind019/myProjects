@@ -11,4 +11,6 @@ public interface IMovieCatalogService {
 
     MovieCatalogResponseDto getUserMovieCatalogInfo(final Integer userId) throws Exception;
 
+    List<MovieCatalogResponseDto> getAllUsers();
+
 }

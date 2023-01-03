@@ -100,6 +100,9 @@ public class MovieCatalogServiceImpl implements IMovieCatalogService {
     @Override
     public MovieCatalogResponseDto getUserMovieCatalogInfo(final Integer userId) throws Exception {
         final UserEntity userInfo = userRepository.findByUserId(userId);
+        if (userInfo == null) {
+            throw new Exception("Given User Id does not exist.");
+        }
         final List<MovieRatingDto> movies = getMovieInfoAndRating(userId);
 
         return MovieCatalogResponseDto.builder()
@@ -139,6 +142,21 @@ public class MovieCatalogServiceImpl implements IMovieCatalogService {
                                        .createdBy(ratingInfoMap.get(movieId).get(0).getCreatedBy())
                                        .createdDate(ratingInfoMap.get(movieId).get(0).getCreatedDate())
                                        .build());
+        });
+        return response;
+    }
+
+    @Override
+    public List<MovieCatalogResponseDto> getAllUsers() {
+        final List<UserEntity> allUsers = userRepository.findAll();
+        final List<MovieCatalogResponseDto> response = new ArrayList<>();
+        allUsers.forEach(user -> {
+            response.add(MovieCatalogResponseDto.builder()
+                                                .userId(user.getUserId())
+                                                .userName(user.getUserName())
+                                                .createdBy(user.getCreatedBy())
+                                                .createdDate(user.getCreatedDate())
+                                                .build());
         });
         return response;
     }
