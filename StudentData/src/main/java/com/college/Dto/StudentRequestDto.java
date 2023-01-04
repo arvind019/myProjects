@@ -1,4 +1,4 @@
-package com.college.StudentData.Dto;
+package com.college.Dto;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Builder;

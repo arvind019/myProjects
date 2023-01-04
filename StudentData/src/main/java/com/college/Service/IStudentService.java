@@ -1,7 +1,7 @@
-package com.college.StudentData.Service;
+package com.college.Service;
 
-import com.college.StudentData.Dto.StudentRequestDto;
-import com.college.StudentData.Dto.StudentResponseDto;
+import com.college.Dto.StudentRequestDto;
+import com.college.Dto.StudentResponseDto;
 
 import java.util.List;
 

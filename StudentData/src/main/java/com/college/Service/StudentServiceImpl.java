@@ -1,10 +1,10 @@
-package com.college.StudentData.Service;
+package com.college.Service;
 
-import com.college.StudentData.Dto.Constants;
-import com.college.StudentData.Dto.StudentRequestDto;
-import com.college.StudentData.Dto.StudentResponseDto;
-import com.college.StudentData.Entity.StudentEntity;
-import com.college.StudentData.Repository.StudentRepository;
+import com.college.Dto.Constants;
+import com.college.Dto.StudentRequestDto;
+import com.college.Dto.StudentResponseDto;
+import com.college.Entity.StudentEntity;
+import com.college.Repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
@@ -26,12 +26,10 @@ public class StudentServiceImpl implements IStudentService {
 
     private StudentEntity getStudentEntity(final StudentRequestDto request) {
         final StudentEntity entity = new StudentEntity();
-        entity.setBranch(request.getBranch());
         entity.setName(request.getName());
-        entity.setCourse(request.getCourse());
+        //entity.setCourse(request.getCourse());
         entity.setMobile(request.getMobile());
         entity.setYear(request.getYear());
-        entity.setGraduationYear(request.getGraduationYear());
         return entity;
     }
 
@@ -56,12 +54,8 @@ public class StudentServiceImpl implements IStudentService {
             return studentRepository.findAll();
         } else if (StringUtils.hasText(name)) {
             return studentRepository.findByName(name);
-        } else if (StringUtils.hasText(course)) {
-            return studentRepository.findByCourse(course);
         } else if (StringUtils.hasText(mobile)) {
             return studentRepository.findByMobile(mobile);
-        } else if (year != null) {
-            return studentRepository.findByYear(year);
         }
         return new ArrayList<>();
     }
@@ -69,12 +63,10 @@ public class StudentServiceImpl implements IStudentService {
     private StudentResponseDto getStudentResponseDto(final StudentEntity entity) {
         return StudentResponseDto.builder()
                                  .id(entity.getId())
-                                 .branch(entity.getBranch())
                                  .name(entity.getName())
-                                 .course(entity.getCourse())
+                                 //.course(entity.getCourse())
                                  .mobile(entity.getMobile())
                                  .year(entity.getYear())
-                                 .graduationYear(entity.getGraduationYear())
                                  .build();
     }
 
@@ -85,12 +77,10 @@ public class StudentServiceImpl implements IStudentService {
             throw new Exception("Student Information for given id Not present");
         }
         final StudentEntity student = optional.get();
-        student.setBranch(request.getBranch() != null ? request.getBranch() : student.getBranch());
         student.setName(request.getName() != null ? request.getName() : student.getName());
-        student.setCourse(request.getCourse() != null ? request.getCourse() : student.getCourse());
+        //student.setCourse(request.getCourse() != null ? request.getCourse() : student.getCourse());
         student.setMobile(request.getMobile() != null ? request.getMobile() : student.getMobile());
         student.setYear(request.getYear() != null ? request.getYear() : student.getYear());
-        student.setGraduationYear(request.getGraduationYear() != null ? request.getGraduationYear() : student.getGraduationYear());
         studentRepository.save(student);
     }
 
@@ -101,12 +91,10 @@ public class StudentServiceImpl implements IStudentService {
             throw new Exception("Student Information for given id Not present");
         }
         final StudentEntity student = optional.get();
-        student.setBranch(request.getBranch());
         student.setName(request.getName());
-        student.setCourse(request.getCourse());
+        //student.setCourse(request.getCourse());
         student.setMobile(request.getMobile());
         student.setYear(request.getYear());
-        student.setGraduationYear(request.getGraduationYear());
         studentRepository.save(student);
     }
 

@@ -1,10 +1,10 @@
-package com.college.StudentData.Controller;
+package com.college.Controller;
 
-import com.college.StudentData.Configuration.BaseAPIResponseBean;
-import com.college.StudentData.Dto.Constants;
-import com.college.StudentData.Dto.StudentRequestDto;
-import com.college.StudentData.Dto.StudentResponseDto;
-import com.college.StudentData.Service.IStudentService;
+import com.college.Dto.Constants;
+import com.college.Configuration.BaseAPIResponseBean;
+import com.college.Dto.StudentRequestDto;
+import com.college.Dto.StudentResponseDto;
+import com.college.Service.IStudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @Controller
-@RequestMapping("student/api/{apiversion}")
+@RequestMapping("/student")
 public class StudentController {
 
     @Autowired

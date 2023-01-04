@@ -1,6 +1,6 @@
-package com.college.StudentData.Repository;
+package com.college.Repository;
 
-import com.college.StudentData.Entity.StudentEntity;
+import com.college.Entity.StudentEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
@@ -8,10 +8,6 @@ import java.util.List;
 public interface StudentRepository extends JpaRepository<StudentEntity, Integer> {
 
     List<StudentEntity> findByName(final String name);
-
-    List<StudentEntity> findByCourse(final String course);
-
-    List<StudentEntity> findByYear(final Integer year);
 
     List<StudentEntity> findByMobile(final String mobile);
 }
