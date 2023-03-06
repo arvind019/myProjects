@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.college</groupId>
-	<artifactId>course-student-data</artifactId>
+	<artifactId>college-data</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Course and Student Project</name>
+	<name>College Project</name>
 	<description>Spring Boot Project for CRUD Rest APIs</description>
 	<properties>
 		<java.version>1.8</java.version>
@@ -20,10 +20,6 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-thymeleaf</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

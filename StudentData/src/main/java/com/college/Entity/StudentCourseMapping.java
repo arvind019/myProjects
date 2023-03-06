@@ -5,7 +5,9 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
+import javax.persistence.EmbeddedId;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import java.io.Serializable;
 
 @Entity
@@ -13,10 +15,10 @@ import java.io.Serializable;
 @AllArgsConstructor
 @Builder
 @Data
-@Table(name = "COURSE_TOPIC_MAPPING")
-public class CourseTopicMapping implements Serializable {
+@Table(name = "STUDENT_COURSE_MAPPING")
+public class StudentCourseMapping implements Serializable {
 
     @EmbeddedId
-    private CourseTopicId courseTopicId;
+    private StudentCourseId studentCourseId;
 
 }

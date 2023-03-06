@@ -20,16 +20,16 @@ import java.io.Serializable;
 public class TopicEntity implements Serializable {
 
     @Id
-    @Column(name = "TOPIC_ID")
+    @Column(name = "TOPIC_ID", columnDefinition="VARCHAR(20)")
     private String topicId;
 
-    @Column(name = "TOPIC_NAME")
+    @Column(name = "TOPIC_NAME", columnDefinition="VARCHAR(20)")
     private String topicName;
 
-    @Column(name = "DESCRIPTION")
+    @Column(name = "DESCRIPTION", columnDefinition="VARCHAR(256)")
     private String description;
 
-    @Column(name = "INSTRUCTOR")
+    @Column(name = "INSTRUCTOR", columnDefinition="VARCHAR(20)")
     private String instructor;
 
 }

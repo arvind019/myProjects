@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @NoArgsConstructor
@@ -17,28 +18,25 @@ public class StudentEntity implements Serializable {
 
     @Id
     @Column(name = "STUDENT_ID")
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "STUDENT_NAME")
+    @Column(name = "STUDENT_NAME", columnDefinition="VARCHAR(20)")
     private String name;
-
-    @Column(name = "COURSE_ID")
-    private Integer courseId;
 
     @Column(name = "YEAR")
     private Integer year;
 
-    @Column(name = "MOBILE")
+    @Column(name = "MOBILE", columnDefinition="VARCHAR(10)")
     private String mobile;
 
     @Column(name = "STATUS")
     @Enumerated(EnumType.STRING)
     private Status status;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "COURSE_ID", updatable = false, insertable = false, referencedColumnName = "COURSE_ID")
-    CourseEntity courseEntity;
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "STUDENT_COURSE_MAPPING", joinColumns = @JoinColumn(name = "STUDENT_ID"))
+    private List<CourseEntity> courses;
 
 }
 

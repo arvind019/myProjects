@@ -16,13 +16,13 @@ import java.util.List;
 public class CourseEntity implements Serializable {
 
     @Id
-    @Column(name = "COURSE_ID")
-    private Integer courseId;
+    @Column(name = "COURSE_ID", columnDefinition="VARCHAR(20)")
+    private String courseId;
 
-    @Column(name = "COURSE_NAME")
+    @Column(name = "COURSE_NAME", columnDefinition="VARCHAR(20)")
     private String courseName;
 
-    @Column(name = "DESCRIPTION")
+    @Column(name = "DESCRIPTION", columnDefinition="VARCHAR(256)")
     private String description;
 
     @Column(name = "PRICE")
@@ -30,5 +30,9 @@ public class CourseEntity implements Serializable {
 
     @Column(name = "COURSE_TIME")
     private Integer time;
+
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "COURSE_TOPIC_MAPPING", joinColumns = @JoinColumn(name = "COURSE_ID"))
+    private List<TopicEntity> topics;
 
 }
